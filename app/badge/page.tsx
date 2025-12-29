@@ -21,7 +21,7 @@ type ThemeId = (typeof themes)[number]["id"]
 
 function BadgePage() {
   const [username, setUsername] = useState("")
-  const [previewUsername, setPreviewUsername] = useState("anbuinfosec")
+  const [previewUsername, setPreviewUsername] = useState("Gtajisan")
   const [theme, setTheme] = useState<ThemeId>("dark")
   const [copied, setCopied] = useState<string | null>(null)
   const [refreshKey, setRefreshKey] = useState(0)
@@ -92,7 +92,7 @@ function BadgePage() {
             <CardContent className="space-y-6">
               <div className="flex gap-2">
                 <Input
-                  placeholder="Enter GitHub username (e.g., anbuinfosec)"
+                  placeholder="Enter GitHub username (e.g., Gtajisan)"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleGenerate()}
