@@ -1,0 +1,71 @@
+export interface Country {
+  code: string
+  name: string
+  flag: string
+  cities: string[]
+}
+
+export const countries: Country[] = [
+  {
+    code: "US",
+    name: "United States",
+    flag: "🇺🇸",
+    cities: ["New York", "San Francisco", "Los Angeles", "Seattle", "Austin", "Chicago"],
+  },
+  { code: "CN", name: "China", flag: "🇨🇳", cities: ["Beijing", "Shanghai", "Shenzhen", "Guangzhou", "Hangzhou"] },
+  { code: "IN", name: "India", flag: "🇮🇳", cities: ["Bangalore", "Mumbai", "Delhi", "Hyderabad", "Chennai", "Pune"] },
+  { code: "DE", name: "Germany", flag: "🇩🇪", cities: ["Berlin", "Munich", "Hamburg", "Frankfurt", "Cologne"] },
+  {
+    code: "GB",
+    name: "United Kingdom",
+    flag: "🇬🇧",
+    cities: ["London", "Manchester", "Birmingham", "Edinburgh", "Bristol"],
+  },
+  { code: "FR", name: "France", flag: "🇫🇷", cities: ["Paris", "Lyon", "Marseille", "Toulouse", "Nice"] },
+  { code: "BR", name: "Brazil", flag: "🇧🇷", cities: ["São Paulo", "Rio de Janeiro", "Brasília", "Belo Horizonte"] },
+  { code: "CA", name: "Canada", flag: "🇨🇦", cities: ["Toronto", "Vancouver", "Montreal", "Ottawa", "Calgary"] },
+  { code: "JP", name: "Japan", flag: "🇯🇵", cities: ["Tokyo", "Osaka", "Kyoto", "Yokohama", "Nagoya"] },
+  { code: "AU", name: "Australia", flag: "🇦🇺", cities: ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide"] },
+  { code: "RU", name: "Russia", flag: "🇷🇺", cities: ["Moscow", "Saint Petersburg", "Novosibirsk", "Kazan"] },
+  { code: "KR", name: "South Korea", flag: "🇰🇷", cities: ["Seoul", "Busan", "Incheon", "Daegu"] },
+  { code: "NL", name: "Netherlands", flag: "🇳🇱", cities: ["Amsterdam", "Rotterdam", "The Hague", "Utrecht"] },
+  { code: "ES", name: "Spain", flag: "🇪🇸", cities: ["Madrid", "Barcelona", "Valencia", "Seville"] },
+  { code: "IT", name: "Italy", flag: "🇮🇹", cities: ["Rome", "Milan", "Naples", "Turin", "Florence"] },
+  { code: "PL", name: "Poland", flag: "🇵🇱", cities: ["Warsaw", "Kraków", "Wrocław", "Gdańsk"] },
+  { code: "SE", name: "Sweden", flag: "🇸🇪", cities: ["Stockholm", "Gothenburg", "Malmö", "Uppsala"] },
+  { code: "CH", name: "Switzerland", flag: "🇨🇭", cities: ["Zurich", "Geneva", "Basel", "Bern"] },
+  { code: "SG", name: "Singapore", flag: "🇸🇬", cities: ["Singapore"] },
+  { code: "IL", name: "Israel", flag: "🇮🇱", cities: ["Tel Aviv", "Jerusalem", "Haifa"] },
+  { code: "UA", name: "Ukraine", flag: "🇺🇦", cities: ["Kyiv", "Kharkiv", "Lviv", "Odesa"] },
+  { code: "PK", name: "Pakistan", flag: "🇵🇰", cities: ["Karachi", "Lahore", "Islamabad", "Faisalabad"] },
+  { code: "ID", name: "Indonesia", flag: "🇮🇩", cities: ["Jakarta", "Surabaya", "Bandung", "Medan"] },
+  { code: "TR", name: "Turkey", flag: "🇹🇷", cities: ["Istanbul", "Ankara", "Izmir", "Bursa"] },
+  { code: "MX", name: "Mexico", flag: "🇲🇽", cities: ["Mexico City", "Guadalajara", "Monterrey", "Puebla"] },
+  { code: "AR", name: "Argentina", flag: "🇦🇷", cities: ["Buenos Aires", "Córdoba", "Rosario", "Mendoza"] },
+  { code: "CO", name: "Colombia", flag: "🇨🇴", cities: ["Bogotá", "Medellín", "Cali", "Barranquilla"] },
+  { code: "VN", name: "Vietnam", flag: "🇻🇳", cities: ["Ho Chi Minh City", "Hanoi", "Da Nang"] },
+  { code: "TH", name: "Thailand", flag: "🇹🇭", cities: ["Bangkok", "Chiang Mai", "Phuket"] },
+  { code: "PH", name: "Philippines", flag: "🇵🇭", cities: ["Manila", "Cebu", "Davao"] },
+  { code: "NG", name: "Nigeria", flag: "🇳🇬", cities: ["Lagos", "Abuja", "Port Harcourt"] },
+  { code: "EG", name: "Egypt", flag: "🇪🇬", cities: ["Cairo", "Alexandria", "Giza"] },
+  { code: "ZA", name: "South Africa", flag: "🇿🇦", cities: ["Johannesburg", "Cape Town", "Durban"] },
+  { code: "KE", name: "Kenya", flag: "🇰🇪", cities: ["Nairobi", "Mombasa"] },
+  { code: "BD", name: "Bangladesh", flag: "🇧🇩", cities: ["Dhaka", "Chittagong"] },
+  { code: "MY", name: "Malaysia", flag: "🇲🇾", cities: ["Kuala Lumpur", "George Town", "Johor Bahru"] },
+  { code: "CZ", name: "Czech Republic", flag: "🇨🇿", cities: ["Prague", "Brno", "Ostrava"] },
+  { code: "RO", name: "Romania", flag: "🇷🇴", cities: ["Bucharest", "Cluj-Napoca", "Timișoara"] },
+  { code: "PT", name: "Portugal", flag: "🇵🇹", cities: ["Lisbon", "Porto", "Braga"] },
+  { code: "BE", name: "Belgium", flag: "🇧🇪", cities: ["Brussels", "Antwerp", "Ghent"] },
+  { code: "AT", name: "Austria", flag: "🇦🇹", cities: ["Vienna", "Graz", "Linz"] },
+  { code: "NO", name: "Norway", flag: "🇳🇴", cities: ["Oslo", "Bergen", "Trondheim"] },
+  { code: "DK", name: "Denmark", flag: "🇩🇰", cities: ["Copenhagen", "Aarhus", "Odense"] },
+  { code: "FI", name: "Finland", flag: "🇫🇮", cities: ["Helsinki", "Espoo", "Tampere"] },
+  { code: "IE", name: "Ireland", flag: "🇮🇪", cities: ["Dublin", "Cork", "Galway"] },
+  { code: "NZ", name: "New Zealand", flag: "🇳🇿", cities: ["Auckland", "Wellington", "Christchurch"] },
+  { code: "CL", name: "Chile", flag: "🇨🇱", cities: ["Santiago", "Valparaíso", "Concepción"] },
+  { code: "PE", name: "Peru", flag: "🇵🇪", cities: ["Lima", "Arequipa", "Cusco"] },
+  { code: "AE", name: "United Arab Emirates", flag: "🇦🇪", cities: ["Dubai", "Abu Dhabi", "Sharjah"] },
+  { code: "SA", name: "Saudi Arabia", flag: "🇸🇦", cities: ["Riyadh", "Jeddah", "Dammam"] },
+]
+
+export type SortField = "followers" | "public_contributions" | "total_contributions" | "public_repos"
