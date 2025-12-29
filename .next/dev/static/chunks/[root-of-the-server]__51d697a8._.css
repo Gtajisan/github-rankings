@@ -3375,6 +3375,26 @@
     background-color: var(--primary);
   }
 
+  .selection\:bg-primary\/30 ::selection {
+    background-color: var(--primary);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .selection\:bg-primary\/30 ::selection {
+      background-color: color-mix(in oklab, var(--primary) 30%, transparent);
+    }
+  }
+
+  .selection\:bg-primary\/30::selection {
+    background-color: var(--primary);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .selection\:bg-primary\/30::selection {
+      background-color: color-mix(in oklab, var(--primary) 30%, transparent);
+    }
+  }
+
   .selection\:text-primary-foreground ::selection, .selection\:text-primary-foreground::selection {
     color: var(--primary-foreground);
   }

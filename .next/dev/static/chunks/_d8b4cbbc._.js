@@ -2599,8 +2599,15 @@ function GitHubRankings() {
             handleCountrySelect(country);
         }
     };
+    const [hydrated, setHydrated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "GitHubRankings.useEffect": ()=>{
+            setHydrated(true);
+        }
+    }["GitHubRankings.useEffect"], []);
+    if (!hydrated) return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "min-h-screen bg-background",
+        className: "min-h-screen bg-background text-foreground selection:bg-primary/30",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
                 className: "border-b border-white/5 bg-card/30 backdrop-blur-xl sticky top-0 z-50 shadow-2xl",
@@ -2618,12 +2625,12 @@ function GitHubRankings() {
                                             className: "w-8 h-8 text-primary animate-pulse"
                                         }, void 0, false, {
                                             fileName: "[project]/components/github-rankings.tsx",
-                                            lineNumber: 114,
+                                            lineNumber: 122,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 121,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2633,7 +2640,7 @@ function GitHubRankings() {
                                                 children: "GitHub Analytics"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 117,
+                                                lineNumber: 125,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2641,19 +2648,19 @@ function GitHubRankings() {
                                                 children: "Gtajisan Edition"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 118,
+                                                lineNumber: 126,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 124,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 112,
+                                lineNumber: 120,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2670,7 +2677,7 @@ function GitHubRankings() {
                                                     className: "w-4 h-4 mr-2 text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/github-rankings.tsx",
-                                                    lineNumber: 125,
+                                                    lineNumber: 133,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2678,18 +2685,18 @@ function GitHubRankings() {
                                                     children: "Get Badge"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/github-rankings.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 134,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/github-rankings.tsx",
-                                            lineNumber: 124,
+                                            lineNumber: 132,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 131,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2703,7 +2710,7 @@ function GitHubRankings() {
                                                 className: `w-4 h-4 mr-2 text-primary ${isLoading ? "animate-spin" : ""}`
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 130,
+                                                lineNumber: 138,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2711,13 +2718,13 @@ function GitHubRankings() {
                                                 children: "Refresh"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 139,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 129,
+                                        lineNumber: 137,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2738,12 +2745,12 @@ function GitHubRankings() {
                                                     d: "M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.9.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.73.08-.72.08-.72 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.72 1.27 3.39.97.11-.76.41-1.27.75-1.56-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.19.92-.26 1.9-.39 2.88-.39s1.96.13 2.88.39c2.21-1.5 3.18-1.19 3.18-1.19.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.41-2.69 5.4-5.25 5.68.42.36.8 1.08.8 2.18 0 1.57-.02 2.83-.02 3.22 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/github-rankings.tsx",
-                                                    lineNumber: 141,
+                                                    lineNumber: 149,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 140,
+                                                lineNumber: 148,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2751,35 +2758,35 @@ function GitHubRankings() {
                                                 children: "Repo"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 151,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 133,
+                                        lineNumber: 141,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 122,
+                                lineNumber: 130,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/github-rankings.tsx",
-                        lineNumber: 111,
+                        lineNumber: 119,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/github-rankings.tsx",
-                    lineNumber: 110,
+                    lineNumber: 118,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/github-rankings.tsx",
-                lineNumber: 109,
+                lineNumber: 117,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2792,7 +2799,7 @@ function GitHubRankings() {
                                 className: "w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"
                             }, void 0, false, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 153,
+                                lineNumber: 161,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2802,7 +2809,7 @@ function GitHubRankings() {
                                         children: "GitHub API Rate Limit Reached"
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 163,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2810,7 +2817,7 @@ function GitHubRankings() {
                                         children: data.message || "Showing sample data. Live data will be available when rate limit resets."
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 164,
                                         columnNumber: 15
                                     }, this),
                                     data.rateLimitInfo?.resetAt && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2821,19 +2828,19 @@ function GitHubRankings() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 160,
+                                        lineNumber: 168,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 154,
+                                lineNumber: 162,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/github-rankings.tsx",
-                        lineNumber: 152,
+                        lineNumber: 160,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2855,27 +2862,27 @@ function GitHubRankings() {
                                                         children: selectedCountry.flag
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/github-rankings.tsx",
-                                                        lineNumber: 177,
+                                                        lineNumber: 185,
                                                         columnNumber: 17
                                                     }, this),
                                                     selectedCountry.name
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 176,
+                                                lineNumber: 184,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                                                 className: `w-4 h-4 transition-transform ${showCountrySelector ? "rotate-180" : ""}`
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 180,
+                                                lineNumber: 188,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 171,
+                                        lineNumber: 179,
                                         columnNumber: 13
                                     }, this),
                                     showCountrySelector && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2885,18 +2892,18 @@ function GitHubRankings() {
                                             onSelect: handleCountrySelect
                                         }, void 0, false, {
                                             fileName: "[project]/components/github-rankings.tsx",
-                                            lineNumber: 185,
+                                            lineNumber: 193,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 192,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 170,
+                                lineNumber: 178,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
@@ -2908,7 +2915,7 @@ function GitHubRankings() {
                                             onCountrySelect: handleCountrySelectByName
                                         }, void 0, false, {
                                             fileName: "[project]/components/github-rankings.tsx",
-                                            lineNumber: 193,
+                                            lineNumber: 201,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2918,23 +2925,23 @@ function GitHubRankings() {
                                                 onSelect: handleCountrySelect
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 196,
+                                                lineNumber: 204,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/github-rankings.tsx",
-                                            lineNumber: 195,
+                                            lineNumber: 203,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/github-rankings.tsx",
-                                    lineNumber: 192,
+                                    lineNumber: 200,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 191,
+                                lineNumber: 199,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -2946,12 +2953,12 @@ function GitHubRankings() {
                                             onCountrySelect: handleCountrySelectByName
                                         }, void 0, false, {
                                             fileName: "[project]/components/github-rankings.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 212,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 211,
                                         columnNumber: 13
                                     }, this),
                                     selectedCountry && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -2966,7 +2973,7 @@ function GitHubRankings() {
                                                             children: selectedCountry.flag
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/github-rankings.tsx",
-                                                            lineNumber: 212,
+                                                            lineNumber: 220,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2979,7 +2986,7 @@ function GitHubRankings() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/github-rankings.tsx",
-                                                                    lineNumber: 214,
+                                                                    lineNumber: 222,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2993,24 +3000,24 @@ function GitHubRankings() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/github-rankings.tsx",
-                                                                    lineNumber: 215,
+                                                                    lineNumber: 223,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/github-rankings.tsx",
-                                                            lineNumber: 213,
+                                                            lineNumber: 221,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/github-rankings.tsx",
-                                                    lineNumber: 211,
+                                                    lineNumber: 219,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 210,
+                                                lineNumber: 218,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$stats$2d$header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["StatsHeader"], {
@@ -3020,7 +3027,7 @@ function GitHubRankings() {
                                                 totalRepos: stats.totalRepos
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 224,
+                                                lineNumber: 232,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3030,12 +3037,12 @@ function GitHubRankings() {
                                                     onSortChange: setSortField
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/github-rankings.tsx",
-                                                    lineNumber: 233,
+                                                    lineNumber: 241,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 232,
+                                                lineNumber: 240,
                                                 columnNumber: 17
                                             }, this),
                                             error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3046,7 +3053,7 @@ function GitHubRankings() {
                                                         children: "Failed to load users. GitHub API rate limit may have been exceeded."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/github-rankings.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 247,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3057,13 +3064,13 @@ function GitHubRankings() {
                                                         children: "Try Again"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/github-rankings.tsx",
-                                                        lineNumber: 242,
+                                                        lineNumber: 250,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 238,
+                                                lineNumber: 246,
                                                 columnNumber: 19
                                             }, this),
                                             !isLoading && sortedUsers.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3073,7 +3080,7 @@ function GitHubRankings() {
                                                         className: "w-12 h-12 text-primary/40 mx-auto mb-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/github-rankings.tsx",
-                                                        lineNumber: 251,
+                                                        lineNumber: 259,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -3081,7 +3088,7 @@ function GitHubRankings() {
                                                         children: "No users found"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/github-rankings.tsx",
-                                                        lineNumber: 252,
+                                                        lineNumber: 260,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3089,7 +3096,7 @@ function GitHubRankings() {
                                                         children: "Try selecting a different country or refreshing the page."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/github-rankings.tsx",
-                                                        lineNumber: 253,
+                                                        lineNumber: 261,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3102,20 +3109,20 @@ function GitHubRankings() {
                                                                 className: "w-4 h-4 mr-2 text-primary"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                                lineNumber: 255,
+                                                                lineNumber: 263,
                                                                 columnNumber: 23
                                                             }, this),
                                                             "Refresh Data"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/components/github-rankings.tsx",
-                                                        lineNumber: 254,
+                                                        lineNumber: 262,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 250,
+                                                lineNumber: 258,
                                                 columnNumber: 19
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$users$2d$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["UsersTable"], {
                                                 users: sortedUsers,
@@ -3125,7 +3132,7 @@ function GitHubRankings() {
                                                 pageSize: pageSize
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 260,
+                                                lineNumber: 268,
                                                 columnNumber: 19
                                             }, this),
                                             sortedUsers.length > 0 && sortedUsers.length < (data?.total_count || 0) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3137,12 +3144,12 @@ function GitHubRankings() {
                                                     children: "Load More"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/github-rankings.tsx",
-                                                    lineNumber: 266,
+                                                    lineNumber: 274,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/github-rankings.tsx",
-                                                lineNumber: 265,
+                                                lineNumber: 273,
                                                 columnNumber: 19
                                             }, this)
                                         ]
@@ -3150,19 +3157,19 @@ function GitHubRankings() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 202,
+                                lineNumber: 210,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/github-rankings.tsx",
-                        lineNumber: 168,
+                        lineNumber: 176,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/github-rankings.tsx",
-                lineNumber: 150,
+                lineNumber: 158,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -3172,7 +3179,7 @@ function GitHubRankings() {
                         className: "absolute inset-0 bg-primary/5 blur-3xl rounded-full -bottom-24 scale-150"
                     }, void 0, false, {
                         fileName: "[project]/components/github-rankings.tsx",
-                        lineNumber: 279,
+                        lineNumber: 287,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3186,7 +3193,7 @@ function GitHubRankings() {
                                         children: "Gtajisan World"
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 282,
+                                        lineNumber: 290,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3194,13 +3201,13 @@ function GitHubRankings() {
                                         children: "Modern analytics dashboard reimagined with glassmorphism and anime aesthetics."
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 283,
+                                        lineNumber: 291,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 281,
+                                lineNumber: 289,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3212,7 +3219,7 @@ function GitHubRankings() {
                                         children: "ffjisan804@gmail.com"
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 289,
+                                        lineNumber: 297,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3220,7 +3227,7 @@ function GitHubRankings() {
                                         children: "|"
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 295,
+                                        lineNumber: 303,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -3231,7 +3238,7 @@ function GitHubRankings() {
                                         children: "Developer: Gtajisan"
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 296,
+                                        lineNumber: 304,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3239,7 +3246,7 @@ function GitHubRankings() {
                                         children: "|"
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 304,
+                                        lineNumber: 312,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -3250,13 +3257,13 @@ function GitHubRankings() {
                                         children: "Source Code"
                                     }, void 0, false, {
                                         fileName: "[project]/components/github-rankings.tsx",
-                                        lineNumber: 305,
+                                        lineNumber: 313,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 288,
+                                lineNumber: 296,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3264,29 +3271,29 @@ function GitHubRankings() {
                                 children: "PRO CODER MODIFICATION • EST. 2025"
                             }, void 0, false, {
                                 fileName: "[project]/components/github-rankings.tsx",
-                                lineNumber: 315,
+                                lineNumber: 323,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/github-rankings.tsx",
-                        lineNumber: 280,
+                        lineNumber: 288,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/github-rankings.tsx",
-                lineNumber: 278,
+                lineNumber: 286,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/github-rankings.tsx",
-        lineNumber: 107,
+        lineNumber: 115,
         columnNumber: 5
     }, this);
 }
-_s(GitHubRankings, "4CR1ObZfuTw2nwCkNXSEaB64GMg=", false, function() {
+_s(GitHubRankings, "C30jh/K2LUOmfSlwcmMdbTTX19k=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$swr$2f$dist$2f$index$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"]
     ];

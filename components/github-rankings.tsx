@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import useSWR from "swr"
 import { type Country, type SortField, countries } from "@/lib/countries"
 import { type GitHubUser, generateMockContributions } from "@/lib/github-api"
@@ -103,8 +103,16 @@ export function GitHubRankings() {
     }
   }
 
+  const [hydrated, setHydrated] = useState(false)
+
+  useEffect(() => {
+    setHydrated(true)
+  }, [])
+
+  if (!hydrated) return null
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       {/* Header */}
       <header className="border-b border-white/5 bg-card/30 backdrop-blur-xl sticky top-0 z-50 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 py-4">
