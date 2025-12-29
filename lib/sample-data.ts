@@ -1,0 +1,61 @@
+import { type GitHubUser } from "./github-api"
+
+export const sampleUsers: GitHubUser[] = [
+  {
+    login: "torvalds",
+    id: 1024025,
+    avatar_url: "https://avatars.githubusercontent.com/u/1024025?v=4",
+    html_url: "https://github.com/torvalds",
+    name: "Linus Torvalds",
+    company: "Linux Foundation",
+    blog: "http://linuxfoundation.org",
+    location: "Portland, OR",
+    bio: "The creator of Linux and Git.",
+    twitter_username: null,
+    public_repos: 7,
+    public_gists: 0,
+    followers: 198000,
+    following: 0,
+    created_at: "2011-09-03T15:26:22Z",
+    public_contributions: 5432,
+    total_contributions: 12456
+  },
+  {
+    login: "gaearon",
+    id: 810438,
+    avatar_url: "https://avatars.githubusercontent.com/u/810438?v=4",
+    html_url: "https://github.com/gaearon",
+    name: "Dan Abramov",
+    company: "@meta",
+    blog: "https://overreacted.io",
+    location: "London, UK",
+    bio: "Working on React.",
+    twitter_username: "dan_abramov",
+    public_repos: 265,
+    public_gists: 78,
+    followers: 85000,
+    following: 172,
+    created_at: "2011-05-25T18:18:31Z",
+    public_contributions: 3210,
+    total_contributions: 8765
+  },
+  {
+    login: "yyx990803",
+    id: 499550,
+    avatar_url: "https://avatars.githubusercontent.com/u/499550?v=4",
+    html_url: "https://github.com/yyx990803",
+    name: "Evan You",
+    company: "Vue.js",
+    blog: "http://evanyou.me",
+    location: "Singapore",
+    bio: "Creator of Vue.js and Vite.",
+    twitter_username: "youyuxi",
+    public_repos: 185,
+    public_gists: 65,
+    followers: 102000,
+    following: 95,
+    created_at: "2010-11-28T01:04:15Z",
+    public_contributions: 4567,
+    total_contributions: 9876
+  }
+]

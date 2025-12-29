@@ -39,7 +39,7 @@ export function GitHubRankings() {
   const [page, setPage] = useState(1)
   const [showCountrySelector, setShowCountrySelector] = useState(false)
 
-  const pageSize = 30 // matches API default
+  const pageSize = 10 // Reduced from 30 for stability
   const { data, error, isLoading, mutate } = useSWR<SearchResponse>(
     selectedCountry
       ? selectedCountry.code === "WORLD"
@@ -50,6 +50,7 @@ export function GitHubRankings() {
     {
       revalidateOnFocus: false,
       dedupingInterval: 60000,
+      shouldRetryOnError: false,
     },
   )
 

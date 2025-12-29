@@ -193,6 +193,73 @@ function generateMockContributions(user) {
     };
 }
 }),
+"[project]/lib/sample-data.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "sampleUsers",
+    ()=>sampleUsers
+]);
+const sampleUsers = [
+    {
+        login: "torvalds",
+        id: 1024025,
+        avatar_url: "https://avatars.githubusercontent.com/u/1024025?v=4",
+        html_url: "https://github.com/torvalds",
+        name: "Linus Torvalds",
+        company: "Linux Foundation",
+        blog: "http://linuxfoundation.org",
+        location: "Portland, OR",
+        bio: "The creator of Linux and Git.",
+        twitter_username: null,
+        public_repos: 7,
+        public_gists: 0,
+        followers: 198000,
+        following: 0,
+        created_at: "2011-09-03T15:26:22Z",
+        public_contributions: 5432,
+        total_contributions: 12456
+    },
+    {
+        login: "gaearon",
+        id: 810438,
+        avatar_url: "https://avatars.githubusercontent.com/u/810438?v=4",
+        html_url: "https://github.com/gaearon",
+        name: "Dan Abramov",
+        company: "@meta",
+        blog: "https://overreacted.io",
+        location: "London, UK",
+        bio: "Working on React.",
+        twitter_username: "dan_abramov",
+        public_repos: 265,
+        public_gists: 78,
+        followers: 85000,
+        following: 172,
+        created_at: "2011-05-25T18:18:31Z",
+        public_contributions: 3210,
+        total_contributions: 8765
+    },
+    {
+        login: "yyx990803",
+        id: 499550,
+        avatar_url: "https://avatars.githubusercontent.com/u/499550?v=4",
+        html_url: "https://github.com/yyx990803",
+        name: "Evan You",
+        company: "Vue.js",
+        blog: "http://evanyou.me",
+        location: "Singapore",
+        bio: "Creator of Vue.js and Vite.",
+        twitter_username: "youyuxi",
+        public_repos: 185,
+        public_gists: 65,
+        followers: 102000,
+        following: 95,
+        created_at: "2010-11-28T01:04:15Z",
+        public_contributions: 4567,
+        total_contributions: 9876
+    }
+];
+}),
 "[project]/app/api/github/users/route.ts [app-route] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -202,6 +269,8 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/server.js [app-route] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$github$2d$api$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/github-api.ts [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$sample$2d$data$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/sample-data.ts [app-route] (ecmascript)");
+;
 ;
 ;
 async function GET(request) {
@@ -227,34 +296,19 @@ async function GET(request) {
             isLiveData: true
         });
     } catch (error) {
-        // If rate limited, just return an error now (no sample data fallback)
-        if (error instanceof Error && error.message === "RATE_LIMITED") {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "GitHub API rate limit reached. Please try again later.",
-                rateLimitInfo: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$github$2d$api$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getRateLimitInfo"])(),
-                isLiveData: false
-            }, {
-                status: 429
-            });
-        }
-        if (error instanceof Error && error.message.includes("504")) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                error: "GitHub API is currently busy (Gateway Timeout). Retrying might help.",
-                rateLimitInfo: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$github$2d$api$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getRateLimitInfo"])(),
-                isLiveData: false
-            }, {
-                status: 504
-            });
-        }
         console.error("GitHub API error:", error);
+        // Fallback to sample data for ANY error to keep the app working
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            error: "Failed to fetch users from GitHub"
-        }, {
-            status: 500
+            users: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$sample$2d$data$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sampleUsers"],
+            total_count: __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$sample$2d$data$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["sampleUsers"].length,
+            page: 1,
+            rateLimitInfo: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$github$2d$api$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getRateLimitInfo"])(),
+            isLiveData: false,
+            message: error instanceof Error && error.message === "RATE_LIMITED" ? "GitHub API rate limit reached. Showing sample data." : "Failed to fetch from GitHub. Showing sample data."
         });
     }
 }
 }),
 ];
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__f0518dc2._.js.map
+//# sourceMappingURL=%5Broot-of-the-server%5D__dae2f6ca._.js.map

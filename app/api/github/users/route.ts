@@ -5,6 +5,7 @@ import {
   generateMockContributions,
   getRateLimitInfo,
 } from "@/lib/github-api"
+import { sampleUsers } from "@/lib/sample-data"
 
 
 export async function GET(request: NextRequest) {
@@ -19,7 +20,7 @@ export async function GET(request: NextRequest) {
 
   try {
     // Search for users by location
-    const searchResults = await searchUsersByLocation(country, page, 30)
+    const searchResults = await searchUsersByLocation(country, page, 10)
 
     // Get detailed info for each user
     const usernames = searchResults.items.map((user) => user.login)
@@ -36,25 +37,18 @@ export async function GET(request: NextRequest) {
       isLiveData: true,
     })
   } catch (error) {
-
-    // If rate limited, just return an error now (no sample data fallback)
-    if (error instanceof Error && error.message === "RATE_LIMITED") {
-      return NextResponse.json({
-        error: "GitHub API rate limit reached. Please try again later.",
-        rateLimitInfo: getRateLimitInfo(),
-        isLiveData: false,
-      }, { status: 429 })
-    }
-
-    if (error instanceof Error && error.message.includes("504")) {
-      return NextResponse.json({
-        error: "GitHub API is currently busy (Gateway Timeout). Retrying might help.",
-        rateLimitInfo: getRateLimitInfo(),
-        isLiveData: false,
-      }, { status: 504 })
-    }
-
     console.error("GitHub API error:", error)
-    return NextResponse.json({ error: "Failed to fetch users from GitHub" }, { status: 500 })
+
+    // Fallback to sample data for ANY error to keep the app working
+    return NextResponse.json({
+      users: sampleUsers,
+      total_count: sampleUsers.length,
+      page: 1,
+      rateLimitInfo: getRateLimitInfo(),
+      isLiveData: false,
+      message: error instanceof Error && error.message === "RATE_LIMITED" 
+        ? "GitHub API rate limit reached. Showing sample data." 
+        : "Failed to fetch from GitHub. Showing sample data.",
+    })
   }
 }
