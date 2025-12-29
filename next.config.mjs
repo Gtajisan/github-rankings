@@ -4,7 +4,16 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+    ],
     unoptimized: true,
+  },
+  experimental: {
+    allowedDevOrigins: ["*"],
   },
   serverExternalPackages: [],
 }
