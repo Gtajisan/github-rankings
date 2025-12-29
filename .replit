@@ -5,8 +5,8 @@ modules = ["bash", "nodejs-20"]
 channel = "stable-24_05"
 
 [deployment]
-run = ["bash", "main.sh"]
-deploymentTarget = "cloudrun"
+run = ["npm", "start"]
+deploymentTarget = "autoscale"
 
 [agent]
 expertMode = true
