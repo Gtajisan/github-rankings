@@ -246,7 +246,19 @@ export function GitHubRankings() {
                 )}
 
                 {/* Users Table */}
-                <UsersTable users={sortedUsers} sortField={sortField} loading={isLoading} page={page} pageSize={pageSize} />
+                {!isLoading && sortedUsers.length === 0 ? (
+                  <div className="text-center py-20 glass-card rounded-2xl">
+                    <AlertCircle className="w-12 h-12 text-primary/40 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-foreground">No users found</h3>
+                    <p className="text-muted-foreground mt-2">Try selecting a different country or refreshing the page.</p>
+                    <Button variant="outline" size="sm" onClick={() => mutate()} className="mt-6 glass-card hover:bg-primary/10">
+                      <RefreshCw className="w-4 h-4 mr-2 text-primary" />
+                      Refresh Data
+                    </Button>
+                  </div>
+                ) : (
+                  <UsersTable users={sortedUsers} sortField={sortField} loading={isLoading} page={page} pageSize={pageSize} />
+                )}
 
                 {/* Load More */}
                 {sortedUsers.length > 0 && sortedUsers.length < (data?.total_count || 0) && (

@@ -22,6 +22,11 @@ export async function GET(request: NextRequest) {
     // Search for users by location
     const searchResults = await searchUsersByLocation(country, page, 10)
 
+    // Handle case where GitHub returns empty results
+    if (!searchResults || !searchResults.items || searchResults.items.length === 0) {
+      throw new Error("EMPTY_RESULTS")
+    }
+
     // Get detailed info for each user
     const usernames = searchResults.items.map((user) => user.login)
     const detailedUsers = await getMultipleUserDetails(usernames)
@@ -48,6 +53,8 @@ export async function GET(request: NextRequest) {
       isLiveData: false,
       message: error instanceof Error && error.message === "RATE_LIMITED" 
         ? "GitHub API rate limit reached. Showing sample data." 
+        : error instanceof Error && error.message === "EMPTY_RESULTS"
+        ? "No users found in this location. Showing global top users instead."
         : "Failed to fetch from GitHub. Showing sample data.",
     })
   }
