@@ -36,16 +36,16 @@ export function UserCard({ user, rank, sortField }: UserCardProps) {
   const mainStat = getMainStat()
 
   return (
-    <div className="group flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 hover:bg-accent/50 transition-all">
+    <div className="group flex items-center gap-4 p-4 rounded-2xl glass-card hover:scale-[1.01] hover:border-primary/50 transition-all duration-300">
       <div
-        className={`flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg border font-bold text-sm ${getRankBadgeColor(rank)}`}
+        className={`flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-xl border-2 font-black text-sm shadow-inner ${getRankBadgeColor(rank)}`}
       >
         #{rank}
       </div>
 
-      <Avatar className="w-12 h-12 border-2 border-border">
-        <AvatarImage src={user.avatar_url || "/placeholder.svg"} alt={user.login} />
-        <AvatarFallback>{user.login.slice(0, 2).toUpperCase()}</AvatarFallback>
+      <Avatar className="w-12 h-12 border-2 border-white/10 ring-2 ring-primary/20">
+        <AvatarImage src={user.avatar_url || "/placeholder.svg"} alt={user.login} className="object-cover" />
+        <AvatarFallback className="bg-primary/10 text-primary font-bold">{user.login.slice(0, 2).toUpperCase()}</AvatarFallback>
       </Avatar>
 
       <div className="flex-1 min-w-0">
@@ -54,24 +54,24 @@ export function UserCard({ user, rank, sortField }: UserCardProps) {
             href={user.html_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-foreground hover:text-primary transition-colors flex items-center gap-1"
+            className="font-bold text-foreground hover:text-primary transition-colors flex items-center gap-1.5"
           >
             {user.name || user.login}
-            <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-0.5 -translate-x-1" />
           </a>
-          <span className="text-muted-foreground text-sm">@{user.login}</span>
+          <span className="text-primary/40 text-xs font-mono uppercase tracking-tighter">@{user.login}</span>
         </div>
 
-        <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground flex-wrap">
+        <div className="flex items-center gap-4 mt-1.5 text-xs font-medium text-muted-foreground/80 flex-wrap">
           {user.company && (
-            <span className="flex items-center gap-1">
-              <Building className="w-3 h-3" />
+            <span className="flex items-center gap-1.5 bg-white/5 px-2 py-0.5 rounded-md">
+              <Building className="w-3 h-3 text-primary/60" />
               {user.company}
             </span>
           )}
           {user.location && (
-            <span className="flex items-center gap-1">
-              <MapPin className="w-3 h-3" />
+            <span className="flex items-center gap-1.5 bg-white/5 px-2 py-0.5 rounded-md">
+              <MapPin className="w-3 h-3 text-primary/60" />
               {user.location}
             </span>
           )}
@@ -80,25 +80,25 @@ export function UserCard({ user, rank, sortField }: UserCardProps) {
 
       <div className="flex items-center gap-6 flex-shrink-0">
         <div className="text-center hidden sm:block">
-          <div className="text-xs text-muted-foreground">Repos</div>
-          <div className="font-semibold text-foreground flex items-center justify-center gap-1">
-            <GitFork className="w-3 h-3" />
+          <div className="text-[10px] uppercase tracking-widest text-muted-foreground/50 font-bold">Repos</div>
+          <div className="font-bold text-foreground flex items-center justify-center gap-1">
+            <GitFork className="w-3 h-3 text-primary/60" />
             {user.public_repos.toLocaleString()}
           </div>
         </div>
 
         <div className="text-center hidden md:block">
-          <div className="text-xs text-muted-foreground">Followers</div>
-          <div className="font-semibold text-foreground flex items-center justify-center gap-1">
-            <Users className="w-3 h-3" />
+          <div className="text-[10px] uppercase tracking-widest text-muted-foreground/50 font-bold">Followers</div>
+          <div className="font-bold text-foreground flex items-center justify-center gap-1">
+            <Users className="w-3 h-3 text-primary/60" />
             {user.followers.toLocaleString()}
           </div>
         </div>
 
-        <div className="text-center min-w-[100px]">
-          <div className="text-xs text-muted-foreground">{mainStat.label}</div>
-          <div className="font-bold text-primary text-lg flex items-center justify-center gap-1">
-            <Star className="w-4 h-4" />
+        <div className="text-center min-w-[110px] bg-primary/5 p-2 rounded-xl border border-primary/10">
+          <div className="text-[10px] uppercase tracking-widest text-primary/60 font-black">{mainStat.label}</div>
+          <div className="font-black text-primary text-xl flex items-center justify-center gap-1 drop-shadow-[0_0_8px_rgba(var(--primary),0.5)]">
+            <Star className="w-4 h-4 fill-primary" />
             {mainStat.value.toLocaleString()}
           </div>
         </div>
