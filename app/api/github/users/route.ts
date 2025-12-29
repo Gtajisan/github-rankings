@@ -46,6 +46,14 @@ export async function GET(request: NextRequest) {
       }, { status: 429 })
     }
 
+    if (error instanceof Error && error.message.includes("504")) {
+      return NextResponse.json({
+        error: "GitHub API is currently busy (Gateway Timeout). Retrying might help.",
+        rateLimitInfo: getRateLimitInfo(),
+        isLiveData: false,
+      }, { status: 504 })
+    }
+
     console.error("GitHub API error:", error)
     return NextResponse.json({ error: "Failed to fetch users from GitHub" }, { status: 500 })
   }
