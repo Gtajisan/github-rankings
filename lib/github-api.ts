@@ -118,18 +118,18 @@ export async function searchUsersByLocation(location: string, page = 1, perPage 
       Accept: "application/vnd.github.v3+json",
       ...getAuthHeaders(),
     },
+    next: { revalidate: 3600 }
   })
 
-  updateRateLimitFromHeaders(response.headers)
-
-  if (response.status === 403) {
-    throw new Error("RATE_LIMITED")
-  }
-
   if (!response.ok) {
+    updateRateLimitFromHeaders(response.headers)
+    if (response.status === 403) {
+      throw new Error("RATE_LIMITED")
+    }
     throw new Error(`GitHub API error: ${response.status}`)
   }
 
+  updateRateLimitFromHeaders(response.headers)
   const data = await response.json()
   setCache(cacheKey, data)
   return data
@@ -151,18 +151,18 @@ export async function getUserDetails(username: string): Promise<GitHubUser> {
       Accept: "application/vnd.github.v3+json",
       ...getAuthHeaders(),
     },
+    next: { revalidate: 3600 }
   })
 
-  updateRateLimitFromHeaders(response.headers)
-
-  if (response.status === 403) {
-    throw new Error("RATE_LIMITED")
-  }
-
   if (!response.ok) {
+    updateRateLimitFromHeaders(response.headers)
+    if (response.status === 403) {
+      throw new Error("RATE_LIMITED")
+    }
     throw new Error(`GitHub API error: ${response.status}`)
   }
 
+  updateRateLimitFromHeaders(response.headers)
   const data = await response.json()
   setCache(cacheKey, data)
   return data
