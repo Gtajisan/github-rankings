@@ -603,6 +603,23 @@ function getRateLimitInfo() {
         isLimited: isRateLimited()
     };
 }
+async function fetchWithRetry(url, options, retries = 2) {
+    try {
+        const response = await fetch(url, options);
+        if (response.status === 504 && retries > 0) {
+            // Exponential backoff
+            await new Promise((resolve)=>setTimeout(resolve, (3 - retries) * 1000));
+            return fetchWithRetry(url, options, retries - 1);
+        }
+        return response;
+    } catch (error) {
+        if (retries > 0) {
+            await new Promise((resolve)=>setTimeout(resolve, (3 - retries) * 1000));
+            return fetchWithRetry(url, options, retries - 1);
+        }
+        throw error;
+    }
+}
 async function searchUsersByLocation(location, page = 1, perPage = 30) {
     const cacheKey = `search:${location}:${page}:${perPage}`;
     const cached = getCached(cacheKey);
@@ -612,7 +629,7 @@ async function searchUsersByLocation(location, page = 1, perPage = 30) {
     }
     const query = encodeURIComponent(`location:${location} type:user`);
     const url = `${GITHUB_API_BASE}/search/users?q=${query}&sort=followers&order=desc&page=${page}&per_page=${perPage}`;
-    const response = await fetch(url, {
+    const response = await fetchWithRetry(url, {
         headers: {
             Accept: "application/vnd.github.v3+json",
             ...getAuthHeaders()
@@ -637,7 +654,7 @@ async function getUserDetails(username) {
         throw new Error("RATE_LIMITED");
     }
     const url = `${GITHUB_API_BASE}/users/${username}`;
-    const response = await fetch(url, {
+    const response = await fetchWithRetry(url, {
         headers: {
             Accept: "application/vnd.github.v3+json",
             ...getAuthHeaders()

@@ -71,6 +71,24 @@ export function getRateLimitInfo() {
   }
 }
 
+async function fetchWithRetry(url: string, options: RequestInit, retries = 2): Promise<Response> {
+  try {
+    const response = await fetch(url, options)
+    if (response.status === 504 && retries > 0) {
+      // Exponential backoff
+      await new Promise(resolve => setTimeout(resolve, (3 - retries) * 1000))
+      return fetchWithRetry(url, options, retries - 1)
+    }
+    return response
+  } catch (error) {
+    if (retries > 0) {
+      await new Promise(resolve => setTimeout(resolve, (3 - retries) * 1000))
+      return fetchWithRetry(url, options, retries - 1)
+    }
+    throw error
+  }
+}
+
 export async function searchUsersByLocation(location: string, page = 1, perPage = 30): Promise<SearchUsersResponse> {
   const cacheKey = `search:${location}:${page}:${perPage}`
   const cached = getCached<SearchUsersResponse>(cacheKey)
@@ -83,7 +101,7 @@ export async function searchUsersByLocation(location: string, page = 1, perPage 
   const query = encodeURIComponent(`location:${location} type:user`)
   const url = `${GITHUB_API_BASE}/search/users?q=${query}&sort=followers&order=desc&page=${page}&per_page=${perPage}`
 
-  const response = await fetch(url, {
+  const response = await fetchWithRetry(url, {
     headers: {
       Accept: "application/vnd.github.v3+json",
       ...getAuthHeaders(),
@@ -116,7 +134,7 @@ export async function getUserDetails(username: string): Promise<GitHubUser> {
 
   const url = `${GITHUB_API_BASE}/users/${username}`
 
-  const response = await fetch(url, {
+  const response = await fetchWithRetry(url, {
     headers: {
       Accept: "application/vnd.github.v3+json",
       ...getAuthHeaders(),
