@@ -603,18 +603,28 @@ function getRateLimitInfo() {
         isLimited: isRateLimited()
     };
 }
-async function fetchWithRetry(url, options, retries = 2) {
+async function fetchWithRetry(url, options, retries = 3) {
+    const timeout = 10000; // 10s timeout
+    const controller = new AbortController();
+    const id = setTimeout(()=>controller.abort(), timeout);
     try {
-        const response = await fetch(url, options);
-        if (response.status === 504 && retries > 0) {
-            // Exponential backoff
-            await new Promise((resolve)=>setTimeout(resolve, (3 - retries) * 1000));
-            return fetchWithRetry(url, options, retries - 1);
+        const response = await fetch(url, {
+            ...options,
+            signal: controller.signal
+        });
+        clearTimeout(id);
+        if (response.status === 504 || response.status === 502 || response.status === 503) {
+            if (retries > 0) {
+                // Exponential backoff
+                await new Promise((resolve)=>setTimeout(resolve, Math.pow(2, 4 - retries) * 1000));
+                return fetchWithRetry(url, options, retries - 1);
+            }
         }
         return response;
     } catch (error) {
-        if (retries > 0) {
-            await new Promise((resolve)=>setTimeout(resolve, (3 - retries) * 1000));
+        clearTimeout(id);
+        if (retries > 0 && error instanceof Error && (error.name === 'AbortError' || error.message.includes('fetch'))) {
+            await new Promise((resolve)=>setTimeout(resolve, Math.pow(2, 4 - retries) * 1000));
             return fetchWithRetry(url, options, retries - 1);
         }
         throw error;

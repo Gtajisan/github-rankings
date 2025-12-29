@@ -13,7 +13,7 @@ const nextConfig = {
     unoptimized: true,
   },
   experimental: {
-    allowedDevOrigins: ["*"],
+    // allowedDevOrigins is for Next.js 14+, but sometimes causes warnings in certain environments
   },
   serverExternalPackages: [],
 }
