@@ -283,6 +283,10 @@ async function GET(request) {
     try {
         // Search for users by location
         const searchResults = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$github$2d$api$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["searchUsersByLocation"])(country, page, 10);
+        // Handle case where GitHub returns empty results
+        if (!searchResults || !searchResults.items || searchResults.items.length === 0) {
+            throw new Error("EMPTY_RESULTS");
+        }
         // Get detailed info for each user
         const usernames = searchResults.items.map((user)=>user.login);
         const detailedUsers = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$github$2d$api$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getMultipleUserDetails"])(usernames);
@@ -304,7 +308,7 @@ async function GET(request) {
             page: 1,
             rateLimitInfo: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$github$2d$api$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["getRateLimitInfo"])(),
             isLiveData: false,
-            message: error instanceof Error && error.message === "RATE_LIMITED" ? "GitHub API rate limit reached. Showing sample data." : "Failed to fetch from GitHub. Showing sample data."
+            message: error instanceof Error && error.message === "RATE_LIMITED" ? "GitHub API rate limit reached. Showing sample data." : error instanceof Error && error.message === "EMPTY_RESULTS" ? "No users found in this location. Showing global top users instead." : "Failed to fetch from GitHub. Showing sample data."
         });
     }
 }
