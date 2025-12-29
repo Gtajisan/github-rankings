@@ -1,84 +1,92 @@
-# GitHub User Analytics / GitHub Rankings
+# 🌟 GitHub User Analytics / GitHub Rankings 🌟
 
-Developed by **Gtajisan** ([ffjisan804@gmail.com](mailto:ffjisan804@gmail.com))
+<p align="center">
+  <img src="public/placeholder-logo.svg" width="120" height="120" alt="Gtajisan Logo" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
+</p>
 
-Lightweight Next.js app that generates country-based GitHub ranking badges and a searchable list of top users by country.
+<p align="center">
+  <h1 align="center">✨ Gtajisan Edition ✨</h1>
+  <p align="center">
+    <strong>Modern GitHub Analytics Dashboard</strong><br />
+    <i>Reimagined with Glassmorphism & Anime Aesthetics</i>
+  </p>
+</p>
 
-## Features
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" />
+  <img src="https://img.shields.io/badge/Tailwind-v4-38B2AC?style=for-the-badge&logo=tailwind-css" />
+  <img src="https://img.shields.io/badge/TypeScript-Ready-3178C6?style=for-the-badge&logo=typescript" />
+  <img src="https://img.shields.io/badge/Status-Stable-brightgreen?style=for-the-badge" />
+</p>
 
-- Dynamic SVG badge per GitHub username with avatar, followers, repos and country rank
-- Country-based user search API with contribution mock data for display
-- Caching and rate-limit fallback to sample data
-- Optionally use a GitHub token to increase API rate limits
+---
 
-## Quick start
+## 🎭 About the Project
 
-Requirements
+Developed by **Gtajisan** ([ffjisan804@gmail.com](mailto:ffjisan804@gmail.com)), this is a high-performance Next.js application that provides deep insights into the GitHub community. It features a stunning **Glassmorphism UI** inspired by modern anime aesthetics, offering transparency, blur effects, and vibrant gradient animations.
 
-- Node.js 18+ (tested with Node 18/20)
-- pnpm (recommended) or npm
+## 🚀 Key Features
 
-Install
+- 💎 **Anime Glassmorphism UI**: A beautiful, translucent interface with backdrop blurs and purple/pink neon accents.
+- 🏅 **Dynamic Ranking Badges**: Generate stunning SVG badges for any GitHub user. Show off your rank, followers, and repo count.
+- 🌍 **Global & Country Rankings**: Real-time leaderboards for top developers worldwide or by specific country.
+- 📊 **Intelligent Data Fallback**: Built-in sample data system ensures the app stays functional even if GitHub's API is rate-limited or down.
+- ⚡ **Lightning Fast**: Powered by Next.js 16 and SWR for intelligent caching and instant navigation.
 
+## 📱 Screenshots
+
+> *Note: These are conceptual representations of our anime-style UI.*
+
+| **Main Dashboard** | **Ranking Badge** |
+|:---:|:---:|
+| <img src="public/placeholder.jpg" width="400" alt="Dashboard" /> | <img src="public/placeholder.svg" width="300" alt="Badge" /> |
+| *Modern Analytics* | *Embeddable Ranking* |
+
+## 🛠️ Technical Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS v4 + Framer Motion
+- **Components**: Radix UI + shadcn/ui
+- **Icons**: Lucide React
+- **Data Fetching**: SWR (Stale-While-Revalidate)
+
+## 🛠️ Installation & Setup
+
+### Prerequisites
+- Node.js 18+
+- npm or pnpm
+
+### Quick Start
 ```bash
-pnpm install
+# Clone the repository
+git clone https://github.com/Gtajisan/github-rankings.git
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
 ```
 
-Set up environment
-
-Create a `.env.local` file in the project root to provide an optional GitHub token (recommended to avoid rate limiting):
-
-```
-GITHUB_TOKEN=ghp_your_personal_access_token_here
-# or NEXT_PUBLIC_GITHUB_TOKEN=...
+### Environment Configuration
+Create a `.env.local` to use a GitHub token (increases API limit from 60 to 5000 requests/hr):
+```env
+GITHUB_TOKEN=your_token_here
 ```
 
-Run development server
+## 📡 API Endpoints
 
-```bash
-pnpm dev
-```
+- **Badge Generator**: `GET /api/badge/[username]?theme=gradient`
+- **Users API**: `GET /api/github/users?country=Bangladesh&page=1`
 
-Open http://localhost:3000 and visit the Badge page to generate and preview badges.
+## 👤 Credits
 
-## Important API endpoints
+Modified and Enhanced by **Gtajisan**
+- 📧 Email: [ffjisan804@gmail.com](mailto:ffjisan804@gmail.com)
+- 🐙 GitHub: [@Gtajisan](https://github.com/Gtajisan)
 
-- Badge image (SVG): `/api/badge/[username]?theme=<theme>`
-  - Example: `/api/badge/anbuinfosec?theme=dark`
-  - Themes: `dark`, `light`, `gradient`, `midnight`, `ocean`, `sunset`
-  - The badge embeds the avatar (data URI) when possible to avoid mixed-content rendering issues.
+---
 
-- GitHub users by country: `/api/github/users?country=<country>&page=<n>`
-  - Returns user details with generated `public_contributions` and `total_contributions` fields.
-
-## Handling rate limits
-
-- The project supports using a GitHub Personal Access Token via the `GITHUB_TOKEN` or `NEXT_PUBLIC_GITHUB_TOKEN` environment variable. When present, requests to the GitHub API include an `Authorization: token <token>` header.
-- If the server detects GitHub rate limiting, the app falls back to sample data from `lib/sample-data.ts` so pages and badges still render.
-
-## Badge behavior and caching
-
-- Badge SVG responses are cached in-memory for 6 hours. Cache keys include username and theme.
-- Country detection uses heuristics (country names, cities, US state names, common aliases) to map `location` strings to a country. If no country is detected the badge will show "Unknown" and rank may be N/A.
-
-## Development notes
-
-- Key files:
-  - `app/api/badge/[username]/route.ts` — badge generation logic and SVG template
-  - `lib/github-api.ts` — GitHub API helpers and rate-limit handling
-  - `lib/sample-data.ts` — sample users used when rate limited
-
-- To preview a badge locally and save it:
-
-```bash
-curl -sS "http://localhost:3000/api/badge/USERNAME?theme=dark" --output badge.svg
-open badge.svg
-```
-
-## Contributing
-
-- PRs welcome. Keep changes small and document behavior changes.
-
-## License
-
-MIT
+<p align="center">
+  Made with 💖 by Gtajisan • © 2025
+</p>
